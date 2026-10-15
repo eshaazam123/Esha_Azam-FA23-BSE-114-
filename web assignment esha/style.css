@@ -1,0 +1,194 @@
+:root {
+  --teal: #0f766e;
+  --teal-dark: #0b5650;
+  --mint: #e6f4f1;
+  --orange: #f97316;
+  --text: #1e293b;
+  --muted: #64748b;
+  --bg: #dfe9e7;
+  --heading: "DM Serif Display", Georgia, serif;
+  --body: "Poppins", "Segoe UI", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  padding: 30px 14px;
+}
+
+.sheet {
+  max-width: 940px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(15, 118, 110, .22);
+}
+
+/* ---------- Banner ---------- */
+.banner {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: #fff;
+  padding: 40px 44px 60px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 28px;
+  align-items: center;
+  position: relative;
+}
+
+.photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--teal);
+  font-family: var(--heading);
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+  border: 5px solid var(--orange);
+  overflow: hidden;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.intro h1 {
+  font-family: var(--heading);
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.role { font-size: 1.05rem; opacity: .9; margin: 4px 0 10px; }
+.badge {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 600;
+  font-size: .85rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+
+.contact {
+  grid-column: 1 / -1;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 30px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .3);
+  font-size: .88rem;
+}
+.contact b { color: #ffd2ad; font-weight: 600; margin-right: 6px; }
+
+/* ---------- Body layout ---------- */
+.body {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 36px;
+  padding: 38px 44px 24px;
+}
+
+section { margin-bottom: 30px; }
+
+section h2 {
+  font-family: var(--heading);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--teal);
+  margin-bottom: 14px;
+  padding-left: 14px;
+  border-left: 5px solid var(--orange);
+  line-height: 1.2;
+}
+
+p { font-size: .94rem; }
+
+/* Education */
+.edu { margin-bottom: 14px; }
+.edu h3 { font-size: 1rem; font-weight: 600; }
+.edu .meta { color: var(--muted); font-size: .88rem; }
+.edu .year { color: var(--orange); font-weight: 600; font-size: .85rem; }
+
+/* Projects */
+.project {
+  background: var(--mint);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(15, 118, 110, .18);
+}
+.project h3 { font-size: 1rem; font-weight: 600; color: var(--teal-dark); }
+.project .tech { font-size: .8rem; color: var(--orange); font-weight: 600; margin-bottom: 4px; }
+
+/* Right column */
+.col-right {
+  background: #f6faf9;
+  border-radius: 14px;
+  padding: 26px 22px 8px;
+  align-self: start;
+}
+
+.skill { margin-bottom: 14px; }
+.skill span { font-size: .88rem; font-weight: 500; }
+.bar {
+  height: 8px;
+  background: #cfe3df;
+  border-radius: 99px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.bar div {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--orange));
+  border-radius: 99px;
+}
+
+.plain { list-style: none; font-size: .92rem; }
+.plain li { display: flex; justify-content: space-between; margin-bottom: 6px; }
+.plain span { color: var(--muted); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span {
+  font-size: .8rem;
+  padding: 4px 12px;
+  border: 1.5px solid var(--teal);
+  color: var(--teal);
+  border-radius: 999px;
+  transition: background .2s, color .2s;
+}
+.tags span:hover { background: var(--teal); color: #fff; }
+
+.foot {
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+  padding: 14px 0 22px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  .banner { grid-template-columns: 1fr; justify-items: center; text-align: center; padding: 32px 22px 40px; }
+  .intro h1 { font-size: 2.3rem; }
+  .contact { justify-content: center; }
+  .body { grid-template-columns: 1fr; padding: 28px 22px 10px; }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body { background: #fff; padding: 0; }
+  .sheet { box-shadow: none; border-radius: 0; }
+  .banner, .badge, .bar div, .project, .col-right {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
