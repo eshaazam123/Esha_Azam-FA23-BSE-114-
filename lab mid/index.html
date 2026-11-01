@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typing Challenge Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<!-- HOME -->
+<section id="home">
+  <h1>Typing Challenge</h1>
+  <p class="sub">Pick a mode and a difficulty, then press Start.</p>
+  <div class="modes">
+    <div class="card sel" id="cardA" data-mode="A">
+      <h2>Mode A: Bubbles</h2>
+      <p>Letters float up in bubbles. Type the letter to pop it. Wrong key costs 5 points. Six misses and the game is over. Score 300 to win.</p>
+      <button class="btn" data-pick="A">Choose Bubbles</button>
+    </div>
+    <div class="card" id="cardB" data-mode="B">
+      <h2>Mode B: KeyMagnet</h2>
+      <p>Press the target key before time runs out. 20 targets per session. Five mistakes and the game is over.</p>
+      <button class="btn" data-pick="B">Choose KeyMagnet</button>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px">
+    <label>Difficulty</label>
+    <div class="opts" id="diffOpts">
+      <button data-d="Easy" class="on">Easy</button><button data-d="Medium">Medium</button><button data-d="Hard">Hard</button>
+    </div>
+    <div id="keysetBox" class="hidden">
+      <label>Key set (KeyMagnet)</label>
+      <div class="opts" id="setOpts">
+        <button data-s="home" class="on">Home row (A S D F J K L)</button><button data-s="top">Top row</button><button data-s="bottom">Bottom row</button><button data-s="all">All letters</button>
+      </div>
+    </div>
+    <button class="btn go" id="startBtn">Start</button>
+  </div>
+</section>
+
+<!-- GAME -->
+<section id="game" class="hidden">
+  <div class="hud" id="hud"></div>
+  <div class="ctrl">
+    <button class="btn" id="pauseBtn">Pause</button>
+    <button class="btn" id="restartBtn">Restart</button>
+    <button class="btn" id="resetBtn">Reset</button>
+  </div>
+  <div id="arena"></div>
+  <div id="bTarget">
+    <div id="kbtarget">?</div>
+    <div class="bar"><i id="timeBar"></i></div>
+  </div>
+  <div id="msg"></div>
+  <div id="kb" aria-label="On-screen keyboard"></div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="hidden">
+  <h1 id="rTitle"></h1>
+  <table id="rTable"></table>
+  <div class="ctrl">
+    <button class="btn go" id="againBtn">Play again</button>
+    <button class="btn" id="homeBtn">Home screen</button>
+  </div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
